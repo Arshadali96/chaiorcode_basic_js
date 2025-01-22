@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-weight: 700;
+      font-size: x-large;
+    }
+    #Modes {
+      border: 3px solid black;
+      font-size: xx-large;
+      border-radius: 50px;
+      font-weight: 900;
+      background: #212121;
+      color: white;
+      height: 100px;
+      width: 250px;
+      display: block;
+      margin: 40vh auto;
+      text-align: center;
+    }
+    option {
+      background-color: white;
+      color: black;
+    }
+    option::selection {
+      color: red;
+    }
+   
+  </style>
+</head>
+<body>
+  <h1>DOm manapulation </h1>
+  <div >
+    <ul class="language">
+      <li>Home</li>
+      <li>Python </li>
+    </ul >
+  </div>
+<button class="button">Click </button>
+<div id="select-btn">
+  <label for="Modes">Select Mode:</label>
+  <select name="Modes" id="Modes">
+    <option value="darkMode">Dark Mode</option>
+    <option value="lightMode">Light Mode</option>
+    <option value="deviceMode">Device Mode</option>
+  </select>
+</div>
+  <script>
+    function lang(langName){
+      let li =document.createElement('li')
+      li.innerHTML = `${langName}`;
+      document.querySelector('.language').appendChild(li)
+
+
+    };
+    lang('python')
+    lang('rubby')
+    var a = document.querySelector('button')
+var body = document.querySelector('body')
+var check = 0;
+a.addEventListener("click",function(){
+  if(check===0){
+    a.innerHTML = 'Black'
+    body.style.backgroundColor = '#212121'
+    body.style.color = 'white';
+    body.style.transition ='0.5s'
+    document.title = 'rasheed clickpad'
+    check = 1;
+
+  }else{
+    a.innerHTML ='white';
+    body.style.backgroundColor = 'white'
+    body.style.color = 'black';
+    body.style.transition ='0.5s'
+    document.title  ='Normal '
+    check = 0 ;
+
+  }
+})
+let modeSelector  = document.getElementById('Modes')//document.getElementById('Modes')
+function changeMode(Mode){
+  if(Mode==='darkMode'){
+    document.body.style.backgroundColor = 'Black'
+    document.body.style.color = '#fff'
+
+  }else if(Mode==='lightMode'){
+    document.body.style.backgroundColor = 'pink'
+    document.body.style.color = 'black'
+  }else if(Mode==='deviceMode'){
+    document.body.style.backgroundColor = '#212121'
+    document.body.style.color = 'white'
+
+  } else {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+  }
+}
+modeSelector.addEventListener('change',()=>{
+  changeMode(modeSelector.value);
+  
+})
+changeMode('darkMode')
+    //function when we click btn title and background has been changed
+
+
+    
+  </script>
+</body>
+</html>
